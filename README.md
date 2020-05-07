@@ -13,3 +13,25 @@ Ultimately I used a Support Vector Classifer. I found this model to be quite acc
 
 ## What N did I choose -- and why!
 I chose 5 for my N. Seeing the closest 5 recipes is really interesting! These percentages were actually chosen very similarly to how I displayed the cuisine predictions and this was another reason I wanted to stick with SVC for my predictions. I built an additional model to support predicting both IDs and Cuisines seperately so that this could easily be implemented as a feature. I could easily change my N because of the implementation I went with. But 5 recipes is also best for when you provide more specific ingredient lists. Eventually the ID predictions become less likely, and thus looking at any more than 5 becomes irrelevant. Instead, 5 was the sweet spot for short ingredient lists and long ingredient lists. 
+
+## Describe functions/code!
+My code has 2 executables and 3 files. The 2 executables are main and train_analyzer_from_yummly. Main consists of main.py and project_3.py -- it's used to actually process ingredients provided on input and utilize trained models in order to do so. Train_analyzer_from_yummly actually handles are the work in training the models ahead of time to be utilized by the main program. 
+Here's the major functionality of each executable:
+1. Main.py:
+- runs via: "py main.py --ingredient granola --ingredient rice"
+
+main()
+- takes arguments from argparse coming from --ingredient to process ingredients into a list that can be analyzed by learning models to predict cuisine type and N closest recipes 
+
+Project_3.py
+- provides support for all functions called within main.py
+
+ingredients_to_string()
+- takes argparse of ingredients and appends them all into one string that can be analyzed by learning models
+
+predict_cuisine()
+- takes ingredients string and shows the predicted cuisine and the predicted value of the cuisine type
+
+create_probability_dataframe()
+- formats value list and class list into a pandas dataframe that can more easily be analyzed for top values
+
