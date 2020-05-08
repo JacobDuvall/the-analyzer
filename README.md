@@ -35,3 +35,23 @@ predict_cuisine()
 create_probability_dataframe()
 - formats value list and class list into a pandas dataframe that can more easily be analyzed for top values
 
+get_top_n_from_df()
+- retrieve the top n best columns based on model score
+
+recipe_finder()
+- given the input ingredients, finds the top n most similar recipes from yummly 
+
+2. Train_analyzer_from_yummly.py:
+- trains the models that I use in main for quick response and predictions
+
+main()
+- controls workflow of this executable
+
+parse_yummly()
+- opens and parses local yummly json file
+
+create_dataframe()
+- creates a pandas dataframe from the yummly json file that contains three columns: 1. id 2. cuisine 3. ingredients
+
+create_model_from_df_cuisine()
+- tokenizes the ingredients and creates a SVC model for the cuisine types
