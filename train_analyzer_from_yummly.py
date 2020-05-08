@@ -88,10 +88,10 @@ def create_model_from_df_cuisine(df):
     x_train_ttt = ttt.fit_transform(x_train_cv)
     clf = SVC(kernel = 'linear', probability=True).fit(x_train_ttt, y_train)
 
-    job_save1 = 'job_cv.joblib'
-    joblib.dump(cv, job_save1)
-    job_save = 'job_model.joblib'
-    joblib.dump(clf, job_save)
+    pickle_save1 = 'pickle_cv.pkl'
+    pickle.dump(cv, open(pickle_save1, 'wb'))
+    pickle_save = 'pickle_model.pkl'
+    pickle.dump(clf, open(pickle_save,  'wb'))
 
 
 if __name__ == '__main__':
