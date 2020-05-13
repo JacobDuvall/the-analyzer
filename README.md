@@ -1,4 +1,4 @@
-# cs5293sp20-project3
+# The Analyzer
 Jacob Duvall
 
 # CHECK THIS OUT!
